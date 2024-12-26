@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/*:root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -12,10 +12,94 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Aquire";
+    src: url("fonts/Aquire-BW0ox.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Aquire Light";
+    src: url("fonts/AquireLight-YzE0o.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Gepestev";
+    src: url("fonts/Gepestev-nRJgO.ttf") format("truetype");
+  }
+}
+
+@layer components {
+  body {
+    font-family: "Inter", serif;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .hw-full {
+    @apply h-full w-full;
+  }
+
+  .section {
+    @apply h-[100vh] w-full relative z-[0];
+  }
+}
+
+video {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 177.77777778vh;
+  /* 100 * 16 / 9 */
+  max-width: unset;
+  min-width: 100%;
+  min-height: 56.25vw;
+  /* 100 * 9 / 16 */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.05);
+  transition: all 0.15s;
+}
+
+.ctn-overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ctn-overlay > div {
+  color: transparent;
+  opacity: 0.3;
+  /*outline: 1px solid salmon;*/
+  background: rgba(255, 255, 255, 0.7);
+}
+
+h1.title {
+  font-family: "Aquire Light", serif;
+}
+
+h1.title-2 {
+  font-family: "Aquire", serif;
+}
+
+p.para {
+  font-family: "Gepestev", serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /*color: var(--foreground);
+  background: var(--background);*/
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  background: linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
