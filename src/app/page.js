@@ -57,7 +57,7 @@ export default function Home() {
           <div>04</div>
           <div>02</div>
           <div>03</div>
-          <div>04</div>
+          <div>01</div>
           <div>04</div>
           <div>04</div>
           <div>04</div>
@@ -67,14 +67,14 @@ export default function Home() {
           <div>04</div>
         </div>
         <div className="ctn-text hw-full flex-center flex-col absolute z-[2] gap-4">
-          <h1 className="title text-7xl">Crypto Text</h1>
-          <h1 className="title-2 text-7xl">Crypto Text</h1>
+          <h1 className="title text-7xl">Crypto Text Light</h1>
+          <h1 className="title-2 text-7xl">Crypto Text Heavy</h1>
           <p className="para text-2xl font-bold">
             This is a text that's going to be used for all the texts so it better look like its
             crypto related
           </p>
           <p className="para text-2xl">
-            This is a normal text that's going to be used for all the texts so it better
+            This is a normal text that's going to be used for all the texts so it better s
           </p>
         </div>
       </section>

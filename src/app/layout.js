@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Nav from "@/app/nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <nav className="bg-transparent fixed z-[1] w-full">
+        {/*<nav className="bg-transparent fixed z-[1] w-full">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <a
               href="https://flowbite.com"
@@ -228,7 +229,8 @@ export default function RootLayout({ children }) {
               </a>
             </div>
           </div>
-        </nav>
+        </nav>*/}
+        <Nav />
         {children}
       </body>
     </html>
