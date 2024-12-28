@@ -79,8 +79,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">Section 1</section>
-      <section className="section">Section 2</section>
+      <section className="section bg-red-300">Section 1</section>
+      <section className="section bg-green-300">Section 2</section>
     </main>
   );
 }

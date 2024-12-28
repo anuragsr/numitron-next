@@ -103,3 +103,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.logo h1 {
+  background: linear-gradient(to right, #911a80, #d42b45);
+  background-clip: text;
+  color: transparent;
+}
