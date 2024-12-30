@@ -66,16 +66,25 @@ export default function Home() {
           <div>04</div>
           <div>04</div>
         </div>
-        <div className="ctn-text hw-full flex-center flex-col absolute z-[2] gap-4">
-          <h1 className="title text-7xl">Crypto Text Light</h1>
-          <h1 className="title-2 text-7xl">Crypto Text Heavy</h1>
-          <p className="para text-2xl font-bold">
-            This is a text that's going to be used for all the texts so it better look like its
-            crypto related
-          </p>
-          <p className="para text-2xl">
-            This is a normal text that's going to be used for all the texts so it better s
-          </p>
+        <div className="ctn-text hw-full flex-center absolute z-[2]">
+          <div className="container mx-auto flex-center">
+            <div className="w-2/3 flex-start flex-col bg-white/75 p-4 px-8 rounded-lg shadow">
+              <h1 className="title text-7xl">The Fastest, Real time</h1>
+              <h1 className="title-2 text-7xl">
+                Crypto INtelligence
+                <br /> platform
+              </h1>
+              <p className="text-2xl">
+                Crowd-sourced and professionally curated research, analysis, trading signals,
+                trading algorithms, and market moving news to give cryptocurrency traders the
+                real-time market intelligence needed to gain an edge.
+              </p>
+              <div className="ctn-buttons">
+                <button className="btn-primary">Learn More</button>
+                <button className="btn-primary">Get Early Beta Access</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

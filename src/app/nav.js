@@ -9,7 +9,7 @@ export default function Nav() {
       <div className="container mx-auto">
         <MegaMenu className="bg-transparent">
           <Navbar.Brand className="logo" href="/">
-            <img alt="" src="/favicon.svg" className="mr-3 h-6 sm:h-9" />
+            <img alt="" src="./images/logo.png" className="mr-3 h-6 sm:h-9" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
               <h1 className="title-2 text-4xl">Numitron</h1>
             </span>
@@ -67,7 +67,13 @@ export default function Nav() {
                       </a>
                     </li>
                   </ul>
-                  <a href="#" className="rounded-lg bg-gray-500 p-8 text-left">
+                  <a
+                    href="#"
+                    className="p-8 bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
+                    style={{
+                      backgroundImage: "url(./images/top.jpg)",
+                    }}
+                  >
                     <p className="mb-5 max-w-xl font-extrabold leading-tight tracking-tight text-white">
                       Preview the new Flowbite dashboard navigation.
                     </p>
