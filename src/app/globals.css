@@ -18,6 +18,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --text: #5b5853;
+  --bg: linear-gradient(to right, #27e163, #22e1da);
+  --text-hover: #fff;
+  --bg-hover: linear-gradient(to right, #d42b45, #911a80);
+}
+
 @layer base {
   @font-face {
     font-family: "Aquire";
@@ -35,7 +42,23 @@
   }
 }
 
+.font-gep {
+  font-family: "Gepestev", serif;
+}
+
+.font-aquire {
+  font-family: "Aquire", serif;
+}
+
+.font-aquire-light {
+  font-family: "Aquire Light", serif;
+}
+
 @layer components {
+  body {
+    @apply font-gep;
+  }
+
   .flex-center {
     @apply flex justify-center items-center gap-4;
   }
@@ -53,16 +76,41 @@
   }
 
   .section {
-    @apply h-[100vh] w-full relative z-[0];
+    @apply h-[100vh] w-full relative z-[0] bg-gray-100;
   }
 
-  .btn-primary {
-    @apply bg-black text-white;
+  .btn {
+    white-space: nowrap;
+    @apply cursor-pointer text-base font-[500] rounded-md p-2 px-4;
+    @apply hover:shadow-lg;
+    @apply focus:ring-0 focus:outline-none;
   }
-}
 
-body {
-  font-family: "Gepestev", serif;
+  .btn--primary {
+    color: var(--text);
+    background: var(--bg);
+    @apply border-none font-bold;
+    @apply hover:text-[--text-hover] hover:shadow-xl;
+  }
+
+  .btn--secondary {
+    background: var(--bg);
+    -webkit-background-clip: text;
+    color: transparent;
+    @apply border border-gray-300 font-bold;
+    @apply hover:shadow-xl;
+  }
+
+  .menu a,
+  .menu button {
+    @apply text-3xl text-black font-aquire;
+    @apply hover:text-[--text-hover];
+  }
+
+  .dropdown a,
+  .dropdown button {
+    @apply text-2xl font-gep;
+  }
 }
 
 /* Section 1 */
@@ -102,7 +150,7 @@ video {
 }
 
 .logo h1 {
-  background: linear-gradient(to right, #911a80, #d42b45);
-  background-clip: text;
+  background: var(--bg);
+  -webkit-background-clip: text;
   color: transparent;
 }

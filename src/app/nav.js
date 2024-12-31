@@ -5,19 +5,19 @@ import { HiChevronDown, HiArrowRight } from "react-icons/hi";
 
 export default function Nav() {
   return (
-    <div className="fixed z-[1] w-full">
+    <div className="menu fixed z-[1] w-full">
       <div className="container mx-auto">
-        <MegaMenu className="bg-transparent">
-          <Navbar.Brand className="logo" href="/">
-            <img alt="" src="./images/logo.png" className="mr-3 h-6 sm:h-9" />
+        <MegaMenu className="bg-transparent sm:px-0">
+          <Navbar.Brand className="logo flex-center" href="/">
+            <img alt="" src="./images/logo.png" className="h-12" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
               <h1 className="title-2 text-4xl">Numitron</h1>
             </span>
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
-            <Navbar.Link href="/">Home</Navbar.Link>
-            <MegaMenu.Dropdown className="w-[50%]" toggle={<>Company</>}>
+            <Navbar.Link href="/">About</Navbar.Link>
+            <MegaMenu.Dropdown className="w-[50%] dropdown" toggle={<>Features</>}>
               <div className="mt-6 border-y border-gray-200 shadow-sm dark:border-gray-600 dark:bg-gray-800">
                 <div className="mx-auto grid max-w-screen-xl px-4 py-5 text-sm text-gray-500 dark:text-gray-400 md:grid-cols-3 md:px-6">
                   <ul
@@ -88,9 +88,8 @@ export default function Nav() {
                 </div>
               </div>
             </MegaMenu.Dropdown>
-            <Navbar.Link href="/">Marketplace</Navbar.Link>
+            <Navbar.Link href="/">Market</Navbar.Link>
             <Navbar.Link href="/">Resources</Navbar.Link>
-            <Navbar.Link href="/">Contact</Navbar.Link>
           </Navbar.Collapse>
         </MegaMenu>
       </div>

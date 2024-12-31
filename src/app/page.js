@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { useEffect } from "react";
 
 export default function Home() {
-  console.log("A");
+  // console.log("A");
 
   useEffect(() => {
     gsap.to(".ctn-overlay > div", {
@@ -67,29 +67,44 @@ export default function Home() {
           <div>04</div>
         </div>
         <div className="ctn-text hw-full flex-center absolute z-[2]">
-          <div className="container mx-auto flex-center">
-            <div className="w-2/3 flex-start flex-col bg-white/75 p-4 px-8 rounded-lg shadow">
-              <h1 className="title text-7xl">The Fastest, Real time</h1>
-              <h1 className="title-2 text-7xl">
-                Crypto INtelligence
-                <br /> platform
-              </h1>
+          <div className="container mx-auto">
+            <div className="w-3/4 flex-start flex-col bg-white/75 p-8 rounded-lg shadow">
+              <h1 className="title text-6xl">The Fastest, Real time</h1>
+              <h1 className="title-2 text-6xl">Crypto Intelligence platform</h1>
               <p className="text-2xl">
                 Crowd-sourced and professionally curated research, analysis, trading signals,
                 trading algorithms, and market moving news to give cryptocurrency traders the
                 real-time market intelligence needed to gain an edge.
               </p>
-              <div className="ctn-buttons">
-                <button className="btn-primary">Learn More</button>
-                <button className="btn-primary">Get Early Beta Access</button>
+              <div className="h-[20px]"></div>
+              <div className="ctn-buttons flex-center">
+                <button className="btn btn--primary text-2xl text-white p-4 px-6 flex-center">
+                  Learn More
+                  <svg
+                    className="w-3.5 h-3.5 ms-2 rtl:rotate-180 scale-125"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </button>
+                <button className="btn btn--secondary text-2xl p-4 px-6">Get Beta Access</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section bg-red-300">Section 1</section>
-      <section className="section bg-green-300">Section 2</section>
+      <section className="section">Section 1</section>
+      <section className="section">Section 2</section>
     </main>
   );
 }
