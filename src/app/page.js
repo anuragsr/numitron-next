@@ -1,12 +1,34 @@
 "use client";
-import Image from "next/image";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
-import * as fullpage from "fullpage.js";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [fullpage, setFullpage] = useState(null);
+
   useEffect(() => {
+    if (fullpage) {
+      // Fullpage init
+      new fullpage("#fullpage", {
+        // licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+        // Navigation
+        // menu: '#menu',
+        // lockAnchors: false,
+        // navigation: true,
+        // navigationColor: "#ffffff",
+        // navigationTooltips: ["HOME", "ABOUT", "FEATURES"],
+        // navigationPosition: "right",
+        anchors: ["firstPage", "secondPage", "third"],
+      });
+    }
+  }, [fullpage]);
+
+  useEffect(() => {
+    import("fullpage.js").then(mod => {
+      setFullpage(() => mod.default);
+    });
+
+    // Animations
     // Video overlay with white squares
     gsap.to(".ctn-overlay > div", {
       opacity: 0.1,
@@ -23,25 +45,18 @@ export default function Home() {
       },
     });
 
-    // Fullpage init
-    new fullpage("#fullpage", {
-      // Navigation
-      // menu: '#menu',
-      // lockAnchors: false,
-      anchors: ["firstPage", "secondPage", "third"],
-      navigationPosition: "right",
-    });
+    // Intro animation
   }, []);
 
   return (
     <main id="fullpage">
       <section className="section">
-        <div className="ctn-video hw-full absolute z-[0] overflow-hidden">
+        <div className="hero-layer z-[0] ctn-video overflow-hidden">
           <video muted loop autoPlay>
             <source src="video/bg.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="ctn-overlay hw-full grid grid-cols-8 grid-rows-4 gap-0 absolute z-[1]">
+        <div className="hero-layer z-[1] ctn-overlay grid grid-cols-8 grid-rows-4 gap-0  ">
           <div>01</div>
           <div>02</div>
           <div>03</div>
@@ -75,11 +90,11 @@ export default function Home() {
           <div>04</div>
           <div>04</div>
         </div>
-        <div className="ctn-text hw-full flex-center absolute z-[2]">
-          <div className="container mx-auto">
-            <div className="w-3/4 flex-start flex-col bg-white/75 p-8 rounded-lg shadow">
-              <h1 className="title text-6xl">The Fastest, Real time</h1>
-              <h1 className="title-2 text-6xl">Crypto Intelligence platform</h1>
+        <div className="hero-layer z-[2] ctn-text flex-center">
+          <div className="container">
+            <div className="w-3/4 flex-start flex-col bg-white/75 card">
+              <h1 className="font-aquire-light text-6xl">The Fastest, Real time</h1>
+              <h1 className="font-aquire text-6xl">Crypto Intelligence platform</h1>
               <p className="text-2xl">
                 Crowd-sourced and professionally curated research, analysis, trading signals,
                 trading algorithms, and market moving news to give cryptocurrency traders the
@@ -110,10 +125,238 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="ctn-scroll absolute z-[1] left-0 bottom-0 w-full flex-center py-8">
+          <img alt="" src="./images/scroll.gif" className="h-20" />
+        </div>
       </section>
 
-      <section className="section">Section 1</section>
-      <section className="section">Section 2</section>
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-start justify-start">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">About</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-2/3">
+              <div className="">Anurag</div>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                At heart, we are an agency offering the next level of market intelligence in the
+                field of Cryptocurrency.
+              </p>
+              <p className="text-2xl">
+                Developing blockchain technology, facilitating cryptocurrency trading and exchanges,
+                providing wallet services, and offering investment opportunities in various crypto
+                assets.
+              </p>
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-center">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Features</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-1/2">
+              <div className="">Anurag</div>
+            </div>
+            <div className="col card basis-1/2">
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+          </div>
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-1/2">
+              <div className="">Anurag</div>
+            </div>
+            <div className="col card basis-1/2">
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-center justify-end">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Our Reach</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                At heart, we are an agency offering the next level of market intelligence in the
+                field of Cryptocurrency.
+              </p>
+              <p className="text-2xl">
+                Developing blockchain technology, facilitating cryptocurrency trading and exchanges,
+                providing wallet services, and offering investment opportunities in various crypto
+                assets.
+              </p>
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+            <div className="col card basis-2/3">
+              <div className="">Anurag</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-center">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Roadmap</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card h-64">
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-start justify-start">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Mission - Vision</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-2/3">
+              <div className="">Anurag</div>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                At heart, we are an agency offering the next level of market intelligence in the
+                field of Cryptocurrency.
+              </p>
+              <p className="text-2xl">
+                Developing blockchain technology, facilitating cryptocurrency trading and exchanges,
+                providing wallet services, and offering investment opportunities in various crypto
+                assets.
+              </p>
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-start justify-start">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Partners</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+          </div>
+          <div className="row flex-start items-stretch">
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+            <div className="col card basis-1/3 space-y-4">
+              <p className="text-2xl">
+                Our work has been appreciated by many well-known companies in the industry.
+                <br />
+                We have had the honor of working with these major clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container w-[100vw] h-[75vh] space-y-4">
+          <div className="row flex-center">
+            <div className="col card">
+              <h1 className="title-gradient font-aquire text-6xl">Follow Us</h1>
+            </div>
+          </div>
+          <div className="h-4" />
+          <div className="row flex-start items-stretch">
+            <div className="col card h-64">
+              <p className="text-2xl">
+                We also provide advisory services on regulatory compliance, security, and market
+                analysis, while focusing on creating decentralized applications (dApps) or tokens
+                through Initial Coin Offerings (ICOs). d
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

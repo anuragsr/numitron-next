@@ -56,7 +56,7 @@
 
 @layer components {
   body {
-    @apply font-gep;
+    @apply font-gep bg-gray-100;
   }
 
   .flex-center {
@@ -72,11 +72,15 @@
   }
 
   .container {
-    @apply px-2 py-2.5;
+    @apply px-2 py-2.5 mx-auto;
   }
 
   .section {
-    @apply h-[100vh] w-full relative z-[0] bg-gray-100;
+    @apply h-[100vh] w-full relative z-[0] flex-center;
+  }
+
+  .hero-layer {
+    @apply hw-full absolute top-0 left-0;
   }
 
   .btn {
@@ -90,7 +94,7 @@
     color: var(--text);
     background: var(--bg);
     @apply border-none font-bold;
-    @apply hover:text-[--text-hover] hover:shadow-xl;
+    @apply hover:text-[--text-hover];
   }
 
   .btn--secondary {
@@ -98,7 +102,6 @@
     -webkit-background-clip: text;
     color: transparent;
     @apply border border-gray-300 font-bold;
-    @apply hover:shadow-xl;
   }
 
   .menu a,
@@ -111,6 +114,10 @@
   .dropdown a,
   .dropdown button {
     @apply text-2xl font-gep;
+  }
+
+  .card {
+    @apply p-8 rounded-lg shadow bg-white;
   }
 }
 
@@ -142,15 +149,7 @@ video {
   background: rgba(255, 255, 255, 0.7);
 }
 
-.title {
-  font-family: "Aquire Light", serif;
-}
-
-.title-2 {
-  font-family: "Aquire", serif;
-}
-
-.logo h1 {
+.title-gradient {
   background: var(--bg);
   -webkit-background-clip: text;
   color: transparent;

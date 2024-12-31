@@ -13,7 +13,7 @@ import Nav from "@/app/nav";
 // });
 
 export const metadata = {
-  title: "Numitron",
+  title: "Numitron | Crypto re-imagined",
   description: "Crypto as you've never seen before.",
 };
 

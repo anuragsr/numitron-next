@@ -6,12 +6,12 @@ import { HiChevronDown, HiArrowRight } from "react-icons/hi";
 export default function Nav() {
   return (
     <div className="menu fixed z-[1] w-full">
-      <div className="container mx-auto">
+      <div className="container">
         <MegaMenu className="bg-transparent sm:px-0">
           <Navbar.Brand className="logo flex-center" href="/">
             <img alt="" src="./images/logo.png" className="h-12" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              <h1 className="title-2 text-4xl">Numitron</h1>
+              <h1 className="title-gradient font-aquire text-4xl">Numitron</h1>
             </span>
           </Navbar.Brand>
           <Navbar.Toggle />
