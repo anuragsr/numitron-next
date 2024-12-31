@@ -3,11 +3,11 @@ import Image from "next/image";
 
 import { gsap } from "gsap";
 import { useEffect } from "react";
+import * as fullpage from "fullpage.js";
 
 export default function Home() {
-  // console.log("A");
-
   useEffect(() => {
+    // Video overlay with white squares
     gsap.to(".ctn-overlay > div", {
       opacity: 0.1,
       duration: 3,
@@ -22,10 +22,19 @@ export default function Home() {
         repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
       },
     });
+
+    // Fullpage init
+    new fullpage("#fullpage", {
+      // Navigation
+      // menu: '#menu',
+      // lockAnchors: false,
+      anchors: ["firstPage", "secondPage", "third"],
+      navigationPosition: "right",
+    });
   }, []);
 
   return (
-    <main>
+    <main id="fullpage">
       <section className="section">
         <div className="ctn-video hw-full absolute z-[0] overflow-hidden">
           <video muted loop autoPlay>

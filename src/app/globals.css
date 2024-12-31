@@ -103,6 +103,7 @@
 
   .menu a,
   .menu button {
+    transition: all 0.25s;
     @apply text-3xl text-black font-aquire;
     @apply hover:text-[--text-hover];
   }
@@ -153,4 +154,7 @@ video {
   background: var(--bg);
   -webkit-background-clip: text;
   color: transparent;
+}
+.fp-watermark {
+  display: none;
 }
