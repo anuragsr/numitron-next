@@ -2,6 +2,9 @@
 
 import { gsap } from "gsap";
 import { useEffect, useState } from "react";
+import About3DScene from "@/app/components/About3DScene";
+import Reach3DScene from "@/app/components/Reach3DScene";
+import MV2DScene from "@/app/components/MV2DScene";
 
 export default function Home() {
   const [fullpage, setFullpage] = useState(null);
@@ -139,8 +142,8 @@ export default function Home() {
           </div>
           <div className="h-4" />
           <div className="row flex-start items-stretch">
-            <div className="col card basis-2/3">
-              <div className="">Anurag</div>
+            <div className="col card basis-2/3 p-0">
+              <About3DScene />
             </div>
             <div className="col card basis-1/3 space-y-4">
               <p className="text-2xl">
@@ -222,8 +225,8 @@ export default function Home() {
                 through Initial Coin Offerings (ICOs).
               </p>
             </div>
-            <div className="col card basis-2/3">
-              <div className="">Anurag</div>
+            <div className="col card basis-2/3 p-0">
+              <Reach3DScene />
             </div>
           </div>
         </div>
@@ -258,8 +261,8 @@ export default function Home() {
           </div>
           <div className="h-4" />
           <div className="row flex-start items-stretch">
-            <div className="col card basis-2/3">
-              <div className="">Anurag</div>
+            <div className="col card basis-2/3 p-0">
+              <MV2DScene />
             </div>
             <div className="col card basis-1/3 space-y-4">
               <p className="text-2xl">
