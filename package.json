@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "flowbite-react": "^0.10.2",
-    "fullpage.js": "^4.0.31",
     "gsap": "^3.12.5",
     "next": "15.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "postcss": "^8",
